@@ -6,6 +6,26 @@
              mc:Ignorable="d"
              x:Class="Codelab.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="0" />
+            </Style>
+            <Style TargetType="{x:Type StackLayout}">
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+            <OnPlatform x:Key="font_bold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/SofiaProBold.otf#SofiaPro-Bold" />
+                <On Platform="iOS" Value="SofiaPro-Bold" />
+            </OnPlatform>
+            <OnPlatform x:Key="font_normal" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/SofiaProRegular.otf#SofiaProRegular" />
+                <On Platform="iOS" Value="SofiaProRegular" />
+            </OnPlatform>
+            <OnPlatform x:Key="font_black" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/SofiaProBlack.otf#SofiaPro-Black" />
+                <On Platform="iOS" Value="SofiaPro-Black" />
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
