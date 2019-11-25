@@ -14,6 +14,20 @@ namespace Codelab.ViewModels
         {
             UsersList = new ObservableCollection<ListUsersModel>();
             UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
+            UsersList.Add(new ListUsersModel { Name = "Jkamz", Image = "https://i.imgur.com/aYkGpAV.png", Detail = "The one who knocks" });
         }
     }
 }
