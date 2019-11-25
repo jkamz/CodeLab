@@ -43,6 +43,6 @@
                 </Grid>
             </RelativeLayout>
         </StackLayout>
-        <Label Text="Scroll to view list of developers" FontSize="12" TextColor="DarkGray" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+        <Label Text="Scroll to view list of developers" FontSize="14" TextColor="Wheat" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
     </Grid>
 </ContentPage>
