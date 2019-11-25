@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              mc:Ignorable="d"
              x:Class="Codelab.Views.HomePage">
     <Grid x:Name="MainWrapper">
@@ -40,9 +41,76 @@
                             </RelativeLayout>
                         </StackLayout>
                     </RelativeLayout>
+                    <Label Text="Scroll to view list of developers" FontSize="14" TextColor="Wheat" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                 </Grid>
             </RelativeLayout>
         </StackLayout>
-        <Label Text="Scroll to view list of developers" FontSize="14" TextColor="Wheat" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+        <StackLayout x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout MinimumHeightRequest="812" Margin="30,0,30,0">
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="0,40,0,40"/>
+                    </OnPlatform>
+                </StackLayout.Padding>
+                <StackLayout x:Name="TitleWrapper" Orientation="Horizontal">
+                    <StackLayout Spacing="6" VerticalOptions="Center">
+                        <Label Text="CODELAB" FontSize="24" TextColor="Black" FontFamily="{StaticResource font_black}" Margin="0,0,0,0" />
+                        <StackLayout Spacing="6" Orientation="Horizontal">
+                            <Label Text="GitHub Developers" FontSize="12" TextColor="Black" FontFamily="{StaticResource font_normal}" />
+                            <Label Text="|" FontSize="12" TextColor="Gray" FontFamily="{StaticResource font_normal}" />
+                            <Label Text="Kenya" FontSize="12" TextColor="Black" FontFamily="{StaticResource font_normal}" />
+                            <Label Text="|" FontSize="12" TextColor="Gray" FontFamily="{StaticResource font_normal}" />
+                            <Label Text="Code" FontSize="12" TextColor="Black" FontFamily="{StaticResource font_normal}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <controls:CircleImage Source="codelab.jpg"
+                                      WidthRequest="64"
+                                      HeightRequest="64"
+                                      HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <ListView ItemsSource="{Binding UsersList}"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:CircleImage HeightRequest="60"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"
+                                       Aspect="AspectFill"
+                                       WidthRequest="66"
+                                       Grid.RowSpan="2"
+                                       Source="{Binding Image}"/>
+
+                                    <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       VerticalOptions="End"
+                                       FontSize="20"
+                                       FontFamily="{StaticResource font_normal}"/>
+
+                                    <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       VerticalOptions="Start"
+                                       Text="{Binding Detail}"
+                                       FontSize="18"
+                                       FontFamily="{StaticResource font_normal}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
     </Grid>
 </ContentPage>
