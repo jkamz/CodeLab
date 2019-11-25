@@ -91,7 +91,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ppic.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codelab\Codelab.csproj">
       <Project>{7F0307C4-45DB-4D58-AC44-C19F5DB684E6}</Project>
