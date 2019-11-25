@@ -16,5 +16,10 @@ namespace Codelab.Views
         {
             InitializeComponent();
         }
+
+        public async void Handle_Swiped(object sender, SwipedEventArgs e)
+        {
+
+        }
     }
 }

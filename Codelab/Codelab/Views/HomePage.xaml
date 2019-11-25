@@ -5,11 +5,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Codelab.Views.HomePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Jkamz Home Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <Grid x:Name="MainWrapper">
+        <StackLayout x:Name="CoverWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Up" Swiped="Handle_Swiped" />
+            </StackLayout.GestureRecognizers>
+            <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                       Source="home.jpg"
+                       VerticalOptions="FillAndExpand"
+                       Aspect="AspectFill"/>
+
+                <Grid x:Name="MainContainer" 
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                    <Grid.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="0,0,0,40" />
+                        </OnPlatform>
+                    </Grid.Padding>
+                    <RelativeLayout VerticalOptions="FillAndExpand">
+                        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.65,Constant=0}"
+                                     Margin="20.0">
+                            <Label Text="CODELAB" TextColor="White" FontSize="36" Margin="0,0,0,8" FontFamily="{StaticResource font_black}"/>
+                            <RelativeLayout VerticalOptions="FillAndExpand">
+                                <Label HeightRequest="80"
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"
+                                       LineBreakMode="WordWrap" Text="One Hub for Kenyan Developers on Github"
+                                       FontFamily="{StaticResource font_normal}"
+                                       FontSize="20"
+                                       TextColor="White" />
+                            </RelativeLayout>
+                        </StackLayout>
+                    </RelativeLayout>
+                </Grid>
+            </RelativeLayout>
         </StackLayout>
-    </ContentPage.Content>
+        <Label Text="Scroll to view list of developers" FontSize="12" TextColor="DarkGray" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+    </Grid>
 </ContentPage>
