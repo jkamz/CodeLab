@@ -44,7 +44,7 @@
                     <Label Text="Scroll to view list of developers" FontSize="14" TextColor="Wheat" FontFamily="{StaticResource font_normal}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                 </Grid>
             </RelativeLayout>
-        </StackLayout>
+        </StackLayout> 
         <StackLayout x:Name="DataWrapper" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout MinimumHeightRequest="812" Margin="30,0,30,0">
                 <StackLayout.Padding>
@@ -71,7 +71,7 @@
                 <ListView ItemsSource="{Binding UsersList}"
                       HasUnevenRows="True"
                       SeparatorVisibility="None"
-                      >
+                      ItemTapped="User_Tapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

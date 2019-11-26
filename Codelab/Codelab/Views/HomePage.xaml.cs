@@ -1,4 +1,5 @@
-﻿using Codelab.ViewModels;
+﻿using Codelab.Models;
+using Codelab.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +18,28 @@ namespace Codelab.Views
         {
             InitializeComponent();
             BindingContext = new ListUsersViewModel();
+            NavigationPage.SetHasNavigationBar(this, false);
 
             CoverWrapper.HeightRequest = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density);
             DataWrapper.HeightRequest = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density);
+            DataWrapper.TranslateTo(0, DataWrapper.HeightRequest, length: 0);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            DataWrapper.TranslateTo(0, DataWrapper.HeightRequest, length: 0);
         }
 
-        public async void Handle_Swiped(object sender, SwipedEventArgs e)
+        public void Handle_Swiped(object sender, SwipedEventArgs e)
         {
             CoverWrapper.TranslateTo(0, (CoverWrapper.Y - CoverWrapper.HeightRequest), length: 300, easing: Easing.CubicInOut);
             DataWrapper.TranslateTo(0, 0, length: 300, easing: Easing.CubicInOut);
-            //ScrollWrapper.ScrollToAsync(0, 0, false);
         }
 
-        private void User_Tapped(object sender, ItemTappedEventArgs e)
+        private async void User_Tapped(object sender, ItemTappedEventArgs e)
         {
-
+            var userdetails = e.Item as ListUsersModel;
+            await Navigation.PushAsync(new ProfilePageView(userdetails.Name, userdetails.Image, userdetails.Detail));
         }
     }
 }
