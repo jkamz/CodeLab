@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:control="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             mc:Ignorable="d"
+             x:Class="Codelab.Views.ProfilePageView">
+    <ScrollView>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="home.jpg" Aspect="AspectFill"/>
+            <Image Source="mask.png" VerticalOptions="End" Aspect="AspectFill" Margin="0,0,0,-1"/>
+
+            <control:CircleImage Source="ppic.png" Margin="0,0,0,-50" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End" />
+
+            <!-- Profile Name -->
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="0,50,0,00">
+                <Label HorizontalTextAlignment="Center" Text="Clementine" Style="{StaticResource ProfileNameLabel}"/>
+                <Label HorizontalTextAlignment="Center" Text="Hipster Coffee Drinker" Margin="0,-5" Style="{StaticResource ProfileTagLabel}"/>
+            </StackLayout>
+
+            <!-- Social Stats Section -->
+            <Grid Grid.Row="2" ColumnSpacing="0" RowSpacing="0" Margin="0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout>
+                    <Label Text="33" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Repos" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+                    <Label Text="94" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Starred" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="2">
+                    <Label Text="957" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Followers" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+            </Grid>
+
+            <!-- profile description -->
+            <!--<ScrollView Grid.Row="3">
+                <Label Margin="20,0" HorizontalTextAlignment="Center" Style="{StaticResource MainBodyLabel}" 
+				Text="Spicy jalapeno bacon ipsum dolor amet pork loin pork sint sed occaecat swine ham capicola deserunt pork belly frankfurter magna drumstick." />
+            </ScrollView> -->
+            <Button Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+            <!-- follow button -->
+            <Button Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
