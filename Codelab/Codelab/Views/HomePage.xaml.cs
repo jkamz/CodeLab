@@ -14,10 +14,11 @@ namespace Codelab.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
+        ListUsersViewModel viewModel = new ListUsersViewModel();
         public HomePage()
         {
             InitializeComponent();
-            BindingContext = new ListUsersViewModel();
+            BindingContext = viewModel;
             NavigationPage.SetHasNavigationBar(this, false);
 
             CoverWrapper.HeightRequest = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density);
@@ -25,9 +26,10 @@ namespace Codelab.Views
             DataWrapper.TranslateTo(0, DataWrapper.HeightRequest, length: 0);
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
+            await viewModel.GetUsers();
         }
 
         public void Handle_Swiped(object sender, SwipedEventArgs e)
@@ -39,7 +41,7 @@ namespace Codelab.Views
         private async void User_Tapped(object sender, ItemTappedEventArgs e)
         {
             var userdetails = e.Item as ListUsersModel;
-            await Navigation.PushAsync(new ProfilePageView(userdetails.Name, userdetails.Image, userdetails.Detail));
+            await Navigation.PushAsync(new ProfilePageView(userdetails.login, userdetails.avatar_url, userdetails.html_url));
         }
     }
 }

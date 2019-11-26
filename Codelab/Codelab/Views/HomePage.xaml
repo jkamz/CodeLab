@@ -91,10 +91,10 @@
                                        Aspect="AspectFill"
                                        WidthRequest="66"
                                        Grid.RowSpan="2"
-                                       Source="{Binding Image}"/>
+                                       Source="{Binding avatar_url}"/>
 
                                     <Label Grid.Column="1"
-                                       Text="{Binding Name}"
+                                       Text="{Binding login}"
                                        VerticalOptions="End"
                                        FontSize="20"
                                        FontFamily="{StaticResource font_normal}"/>
@@ -102,7 +102,7 @@
                                     <Label Grid.Column="1"
                                        Grid.Row="1"
                                        VerticalOptions="Start"
-                                       Text="{Binding Detail}"
+                                       Text="{Binding html_url}"
                                        FontSize="18"
                                        FontFamily="{StaticResource font_normal}"/>
                                 </Grid>
