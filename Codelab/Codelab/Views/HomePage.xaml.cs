@@ -1,4 +1,5 @@
-﻿using Codelab.ViewModels;
+﻿using Codelab.Models;
+using Codelab.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,8 @@ namespace Codelab.Views
 
         private async void User_Tapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePageView());
+            var userdetails = e.Item as ListUsersModel;
+            await Navigation.PushAsync(new ProfilePageView(userdetails.Name, userdetails.Image, userdetails.Detail));
         }
     }
 }

@@ -19,15 +19,13 @@
             <Image Source="home.jpg" Aspect="AspectFill"/>
             <Image Source="mask.png" VerticalOptions="End" Aspect="AspectFill" Margin="0,0,0,-1"/>
 
-            <control:CircleImage Source="ppic.png" Margin="0,0,0,-50" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End" />
+            <control:CircleImage x:Name="UserPic" Margin="0,0,0,-50" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End" />
 
-            <!-- Profile Name -->
             <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="0,50,0,00">
-                <Label HorizontalTextAlignment="Center" Text="Clementine" Style="{StaticResource ProfileNameLabel}"/>
-                <Label HorizontalTextAlignment="Center" Text="Hipster Coffee Drinker" Margin="0,-5" Style="{StaticResource ProfileTagLabel}"/>
+                <Label x:Name="UserName" HorizontalTextAlignment="Center" Style="{StaticResource ProfileNameLabel}"/>
+                <Label x:Name="UserDetails" HorizontalTextAlignment="Center" Margin="0,-5" Style="{StaticResource ProfileTagLabel}"/>
             </StackLayout>
 
-            <!-- Social Stats Section -->
             <Grid Grid.Row="2" ColumnSpacing="0" RowSpacing="0" Margin="0,30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -51,13 +49,9 @@
                 </StackLayout>
             </Grid>
 
-            <!-- profile description -->
-            <!--<ScrollView Grid.Row="3">
-                <Label Margin="20,0" HorizontalTextAlignment="Center" Style="{StaticResource MainBodyLabel}" 
-				Text="Spicy jalapeno bacon ipsum dolor amet pork loin pork sint sed occaecat swine ham capicola deserunt pork belly frankfurter magna drumstick." />
-            </ScrollView> -->
+
             <Button Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
-            <!-- follow button -->
+
             <Button Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
         </Grid>
     </ScrollView>
