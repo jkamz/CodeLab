@@ -15,16 +15,23 @@ namespace Codelab.ViewModels
         static public async Task<ApiResponse> GetUser(string url)
         {
             ApiResponse response = null;
-            HttpClient httpClient = new HttpClient();
-            var httpresponse = await httpClient.GetStringAsync(url);
-            var user = JsonConvert.DeserializeObject<UserProfileModel>(httpresponse);
-            response = new ApiResponse
+            try
             {
-                Content = httpresponse,
-                StatusCode = 200
-            };
+                HttpClient httpClient = new HttpClient();
+                var httpresponse = await httpClient.GetStringAsync(url);
+                var user = JsonConvert.DeserializeObject<UserProfileModel>(httpresponse);
+                response = new ApiResponse
+                {
+                    Content = httpresponse,
+                };
 
-            UserProfile = user;
+                UserProfile = user;
+            }
+                
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             return response;
         }

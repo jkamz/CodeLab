@@ -94,15 +94,9 @@
                                        Source="{Binding avatar_url}"/>
 
                                     <Label Grid.Column="1"
-                                       Text="{Binding login}"
-                                       VerticalOptions="End"
-                                       FontSize="20"
-                                       FontFamily="{StaticResource font_normal}"/>
-
-                                    <Label Grid.Column="1"
                                        Grid.Row="1"
-                                       VerticalOptions="Start"
-                                       Text="{Binding html_url}"
+                                       VerticalOptions="Center"
+                                       Text="{Binding login}"
                                        FontSize="18"
                                        FontFamily="{StaticResource font_normal}"/>
                                 </Grid>
