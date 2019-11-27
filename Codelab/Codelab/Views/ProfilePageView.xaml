@@ -34,17 +34,17 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout>
-                    <Label Text="33" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label x:Name="RepoCount" Text="33" Style="{StaticResource StatsNumberLabel}"/>
                     <Label Text="Repos" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
-                    <Label Text="94" Style="{StaticResource StatsNumberLabel}"/>
-                    <Label Text="Starred" Style="{StaticResource StatsCaptionLabel}"/>
+                    <Label x:Name="FollowingCount" Text="94" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Following" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
-                    <Label Text="957" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label x:Name="FollowersCount" Text="957" Style="{StaticResource StatsNumberLabel}"/>
                     <Label Text="Followers" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
             </Grid>

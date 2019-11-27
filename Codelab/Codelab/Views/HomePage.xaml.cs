@@ -15,6 +15,7 @@ namespace Codelab.Views
     public partial class HomePage : ContentPage
     {
         ListUsersViewModel viewModel = new ListUsersViewModel();
+
         public HomePage()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Codelab.Views
         private async void User_Tapped(object sender, ItemTappedEventArgs e)
         {
             var userdetails = e.Item as ListUsersModel;
+            await ProfileViewModel.GetUser();
             await Navigation.PushAsync(new ProfilePageView(userdetails.login, userdetails.avatar_url, userdetails.html_url));
         }
     }
