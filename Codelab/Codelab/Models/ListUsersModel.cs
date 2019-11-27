@@ -4,10 +4,22 @@ using System.Text;
 
 namespace Codelab.Models
 {
-    class ListUsersModel
+    public class ListUsersModel
     {
-        public string Name { get; set; }
-        public string Detail { get; set; }
-        public string Image { get; set; }
+        public string login { get; set; }
+
+        public string url { get; set; }
+        public string avatar_url { get; set; }
+        public string html_url { get; set; }
+        public string followers_url { get; set; }
+        public string starred_url { get; set; }
+        public string repos_url { get; set; }
+    }
+
+    public class RootObject
+    {
+        public int total_count { get; set; }
+        public bool incomplete_results { get; set; }
+        public List<ListUsersModel> items { get; set; }
     }
 }

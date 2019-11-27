@@ -34,25 +34,25 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout>
-                    <Label Text="33" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label x:Name="RepoCount" Text="33" Style="{StaticResource StatsNumberLabel}"/>
                     <Label Text="Repos" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
-                    <Label Text="94" Style="{StaticResource StatsNumberLabel}"/>
-                    <Label Text="Starred" Style="{StaticResource StatsCaptionLabel}"/>
+                    <Label x:Name="FollowingCount" Text="94" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Following" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="2">
-                    <Label Text="957" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label x:Name="FollowersCount" Text="957" Style="{StaticResource StatsNumberLabel}"/>
                     <Label Text="Followers" Style="{StaticResource StatsCaptionLabel}"/>
                 </StackLayout>
             </Grid>
 
 
-            <Button Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+            <Button x:Name="GithubButton" Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}" Clicked="GithubButton_Clicked"/>
 
-            <Button Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+            <Button x:Name="ShareButton" Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}" Clicked="ShareButton_Clicked"/>
         </Grid>
     </ScrollView>
 </ContentPage>
