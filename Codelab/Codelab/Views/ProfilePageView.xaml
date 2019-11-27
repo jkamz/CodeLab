@@ -50,9 +50,9 @@
             </Grid>
 
 
-            <Button Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+            <Button x:Name="GithubButton" Grid.Row="3" Text="Visit Github" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}" Clicked="GithubButton_Clicked"/>
 
-            <Button Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}"/>
+            <Button x:Name="ShareButton" Grid.Row="4" Text="Share Profile" Margin="20" VerticalOptions="End" Style="{StaticResource FollowButton}" Clicked="ShareButton_Clicked"/>
         </Grid>
     </ScrollView>
 </ContentPage>
