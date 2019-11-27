@@ -12,11 +12,11 @@ namespace Codelab.ViewModels
     {
         static public UserProfileModel UserProfile;
 
-        static public async Task<ApiResponse> GetUser()
+        static public async Task<ApiResponse> GetUser(string url)
         {
             ApiResponse response = null;
             HttpClient httpClient = new HttpClient();
-            var httpresponse = await httpClient.GetStringAsync("https://api.github.com/users/kenyansongithub");
+            var httpresponse = await httpClient.GetStringAsync(url);
             var user = JsonConvert.DeserializeObject<UserProfileModel>(httpresponse);
             response = new ApiResponse
             {

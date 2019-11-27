@@ -42,7 +42,7 @@ namespace Codelab.Views
         private async void User_Tapped(object sender, ItemTappedEventArgs e)
         {
             var userdetails = e.Item as ListUsersModel;
-            await ProfileViewModel.GetUser();
+            await ProfileViewModel.GetUser(userdetails.url);
             await Navigation.PushAsync(new ProfilePageView(userdetails.login, userdetails.avatar_url, userdetails.html_url));
         }
     }
